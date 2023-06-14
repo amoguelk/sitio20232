@@ -1,0 +1,80 @@
+html {
+	height: 100%;
+	font-size: 24px;
+	font-family: sans-serif;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+}
+
+button {
+	cursor: pointer;
+}
+
+.card-row, .grid-container {
+	display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-column-gap: 2em;
+    grid-row-gap: 2em;
+}
+
+.card-row .card {
+	grid-column: span 1;
+	grid-row-start: 1;	
+}
+
+.card {
+	border: 2px solid #3a2a34;
+	border-radius: 15px;
+	padding: 1em;
+}
+
+.card a {
+	border: none;
+	background-color: #493843;
+	width: calc(100% + 2em);
+	color: white;
+	font-size: 1em;
+    margin-left: -1em;
+    border-radius: 0 0 15px 15px;
+    padding: 0.5em 0 0.5em 0;
+    position: relative;
+    bottom: -1em;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+}
+
+.card a:hover{
+	background-color: #3a2a34;
+}
+
+#article-page {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+#article-page main {
+	height: 60vh;
+}
+
+header, footer {
+	height: 20vh;
+	background-color: #493843;
+}
+
+#sidebar {
+	grid-column: span 1;
+	grid-row-start: 1;	
+	background-color: #426B69;
+}
+
+#content {
+	grid-column: span 3;
+	grid-row-start: 1;	
+}

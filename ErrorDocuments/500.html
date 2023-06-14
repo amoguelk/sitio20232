@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>500 Server Crash</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<style type="text/css">
+		html {
+			font-family: sans-serif;
+			height: 100%;
+			font-size: 16px;
+		}
+
+		body {
+			display: flex;
+			flex-direction: column;
+			margin: 1em;
+			height: calc(100% - 2em);
+			justify-content: center;
+		}
+
+		body * {
+			display: flex;
+			justify-content: center;
+		}
+
+		#error-code {
+			font-size: 5em;
+			margin-bottom: 0;
+		}
+
+		#error-title {
+			font-size: 4em;
+		}
+
+		#error-desc {
+			font-size: 1.5em;
+			padding: 0 2em;
+		}
+	</style>
+</head>
+<body>
+<h1 id="error-code">500</h1>
+<h2 id="error-title">Server Crash</h2>
+<p id="error-desc">Congrats, you broke it. Or I broke it. Or it broke itself. It's broken, that's what you have to know.</p>
+</body>
+</html>
