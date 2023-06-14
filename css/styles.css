@@ -13,6 +13,11 @@ button {
 	cursor: pointer;
 }
 
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
 .card-row, .grid-container {
 	display: grid;
     grid-template-columns: auto;
@@ -44,7 +49,6 @@ button {
     position: relative;
     bottom: -1em;
     display: block;
-    text-decoration: none;
     text-align: center;
 }
 
@@ -60,21 +64,35 @@ button {
 }
 
 #article-page main {
-	height: 60vh;
+	height: 70vh;
 }
 
 header, footer {
-	height: 20vh;
+	height: 15vh;
 	background-color: #493843;
 }
 
 #sidebar {
-	grid-column: span 1;
+	grid-column-start: 1;
+	grid-column-end: 2;
 	grid-row-start: 1;	
 	background-color: #426B69;
+	color: white;
+	padding: 1em 0 0 1em;
+	display: flex;
+	flex-direction: column;
+}
+
+.menu li {
+	list-style-type: none;
+	padding: 0.5em;
+}
+
+.menu li:hover {
+	background-color: #96C7C5;
 }
 
 #content {
-	grid-column: span 3;
-	grid-row-start: 1;	
-}
+	grid-column-start: 2;
+    grid-column-end: 10;
+    grid-row-start: 1;
