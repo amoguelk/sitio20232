@@ -85,7 +85,7 @@ a {
 	padding: 0 1em 0 1em;
 }
 
-#article-page {
+#article-page, #donate-page {
 	min-height: 100%;
 	position: relative;
 }
@@ -142,9 +142,52 @@ main {
 	color: black;
 }
 
-#content {
+#article-content {
 	position: relative;
 	left: 25vw;
 	width: 70vw;
 	padding-top: 1em;
+}
+
+#donate-content {
+	position: relative;
+	padding: 1em;
+}
+
+.input-row {
+	padding: 0.5em;
+	display: flex;
+	align-items: center;
+}
+
+.input-row label {
+	width: 15vw;
+    display: block;
+}
+
+.input-row input {
+	width: 25vw;
+	padding: 0.25em;
+	border: none;
+	background-color: #CACFD6;
+	font-size: 1em;
+}
+
+#submit-btn-container {
+	display: flex;
+	justify-content: flex-end;
+}
+
+#submit-btn {
+	font-size: 1em;
+    margin: 1em;
+    padding: 1em;
+    background-color: #596F62;
+    border: none;
+    color: white;
+}
+
+#submit-btn:hover {
+	background-color: #CACFD6;
+	color: black;
 }
