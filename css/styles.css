@@ -2,6 +2,7 @@ html {
 	height: 100%;
 	font-size: 24px;
 	font-family: sans-serif;
+	scroll-padding: 15vh;
 }
 
 body {
@@ -56,43 +57,82 @@ a {
 	background-color: #3a2a34;
 }
 
-#article-page {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-#article-page main {
-	height: 70vh;
-}
-
-header, footer {
-	height: 15vh;
-	background-color: #493843;
-}
-
-#sidebar {
-	grid-column-start: 1;
-	grid-column-end: 2;
-	grid-row-start: 1;	
-	background-color: #426B69;
-	color: white;
-	padding: 1em 0 0 1em;
-	display: flex;
-	flex-direction: column;
-}
-
 .menu li {
 	list-style-type: none;
 	padding: 0.5em;
 }
 
-.menu li:hover {
+.menu li a {
+	display: flex;
+    height: inherit;
+    width: 100%;
+    align-items: center;
+}
+
+#article-page {
+	min-height: 100%;
+	position: relative;
+}
+
+header, footer {
+	height: 15vh;
+	width: 100%;
+	background-color: #493843;
+	color: white;
+}
+
+header {
+	position: fixed;
+	z-index: 999;
+}
+
+header .menu {
+	height: inherit;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+header .menu li {
+	height: inherit;
+	padding: 0 2em 0 2em;
+}
+
+header .menu li:hover {
+	background-color: #9C8393;
+	color: black;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+}
+
+footer * {
+	padding: 1em 0 0 1em;
+}
+
+main {
+	padding: 15vh 0 15vh 0;
+}
+
+#sidebar {
+	width: 20vw;
+	height: 100%;
+	background-color: #426B69;
+	color: white;
+	padding: 1em 0 0 1em;
+	position: fixed;
+}
+
+#sidebar .menu li:hover {
 	background-color: #96C7C5;
+	color: black;
 }
 
 #content {
-	grid-column-start: 2;
-    grid-column-end: 10;
-    grid-row-start: 1;
+	position: relative;
+	left: 25vw;
+	width: 70vw;
+	padding-top: 1em;
+}
