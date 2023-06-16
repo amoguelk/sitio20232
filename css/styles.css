@@ -10,8 +10,30 @@ body {
 	margin: 0;
 }
 
-button {
+.btn-container {
+	display: flex;
+	justify-content: flex-end;
+}
+
+
+.btn {
 	cursor: pointer;
+	font-size: 1em;
+    margin: 1em;
+    padding: 1em;
+    background-color: #596F62;
+    border: none;
+    color: white;
+}
+
+.btn:hover {
+	background-color: #CACFD6;
+	color: black;
+}
+
+.btn:disabled {
+	background-color: #CACFD6;
+	color: grey;
 }
 
 a {
@@ -173,12 +195,12 @@ main {
 	font-size: 1em;
 }
 
-#submit-btn-container {
+/*#submit-btn-container {
 	display: flex;
 	justify-content: flex-end;
 }
-
-#submit-btn {
+*/
+/*#submit-btn {
 	font-size: 1em;
     margin: 1em;
     padding: 1em;
@@ -190,4 +212,19 @@ main {
 #submit-btn:hover {
 	background-color: #CACFD6;
 	color: black;
+}*/
+
+/*#submit-btn:disabled {
+	background-color: #CACFD6;
+	color: grey;
+}
+*/
+#result-display {
+    background-color: #426B69;
+    color: #CACFD6;
+    padding: 2em;
+    margin: auto;
+    width: 50vw;
+    max-height: 30vh;
+    overflow-y: auto;
 }
