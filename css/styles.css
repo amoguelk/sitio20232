@@ -15,7 +15,6 @@ body {
 	justify-content: flex-end;
 }
 
-
 .btn {
 	cursor: pointer;
 	font-size: 1em;
@@ -227,4 +226,15 @@ main {
     width: 50vw;
     max-height: 30vh;
     overflow-y: auto;
+}
+
+#php-error-page {
+	text-align: center;
+    height: 100%;
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    font-size: larger;
 }

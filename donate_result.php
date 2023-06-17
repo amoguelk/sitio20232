@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<?php
-		include("conexion.php");
+			include("conexion.php");
 			$identificador = rand(1000, 9999);
 			$nombre	= $_POST['nombre'];
 			$apPaterno = $_POST['apPaterno'];
@@ -27,22 +27,22 @@
 			$sqltarjeta = "INSERT INTO pago VALUES ('$numTarjeta', '$identificador', '$nombreTarjeta', '$cvv', '$mes','$anio')";
 			$sqltransaccion = "INSERT INTO donacion VALUES ('$transaccion', '$identificador', '$monto', '$mensaje')";
 			
-			if(mysqli_query($conexion, $sqlpersona)){
-				print("Datos registrados de usuario");
-			}else {
-				print("Error: " . $sqlpersona . "<br>" . mysqli_error($conexion));
+			try {
+				mysqli_query($conexion, $sqlpersona);
+			} catch (Exception $e) {
+				showError("Error: " . $sqlpersona . "<br>" . mysqli_error($conexion));
 			}
-			
-			if(mysqli_query($conexion, $sqltarjeta)){
-				print("Datos registrados de tarjeta");
-			}else {
-				print("Error: " . $sqltarjeta . "<br>" . mysqli_error($conexion));
+
+			try {
+				mysqli_query($conexion, $sqltarjeta);
+			} catch (Exception $e) {
+				showError("Error: " . $sqltarjeta . "<br>" . mysqli_error($conexion));
 			}
-			
-			if(mysqli_query($conexion, $sqltransaccion)){
-				print("Datos registrados de donacion");
-			}else {
-				print("Error: " . $sqltransaccion . "<br>" . mysqli_error($conexion));
+
+			try {
+				mysqli_query($conexion, $sqltransaccion);
+			} catch (Exception $e) {
+				showError("Error: " . $sqltransaccion . "<br>" . mysqli_error($conexion));
 			}
 						
 			mysqli_close($conexion);
