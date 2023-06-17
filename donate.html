@@ -44,10 +44,10 @@
 						</div>
 						<h3>Información de donación</h3>
 						<div class="input-row">
-							<label for="monto">Monto (MXN)</label><input min="1" required placeholder="100" type="number" name="monto" id="monto">
+							<label for="monto">Monto (MXN)</label><input min="1" required placeholder="100" type="number" name="monto" id="monto" max="9999999999">
 						</div>
-						<label style="display: block; padding-bottom: 1em;" for="mensaje">¿Algún mensaje que quieras agregar a tu donación? (Opcional)</label>
-						<textarea  name="mensaje" id="mensaje" style="display: block;" placeholder="¡Vivan los perritos!" cols="100" rows="10"></textarea>
+						<label style="display: block; padding-bottom: 1em;" for="mensaje">¿Algún mensaje que quieras agregar a tu donación? (Opcional, 500 caracteres máximo)</label>
+						<textarea  name="mensaje" id="mensaje" style="display: block;" placeholder="¡Vivan los perritos!" cols="100" rows="10" maxlength="500"></textarea>
 						<div class="btn-container">
 							<button class="btn" id="submit-btn" type="submit">Enviar</button>
 						</div>

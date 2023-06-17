@@ -26,11 +26,13 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `donacion`
 --
 
+DROP TABLE IF EXISTS `donacion`;
+
 CREATE TABLE `donacion` (
   `IdTransaccion` int(10) NOT NULL,
   `IdPersona` int(10) NOT NULL,
   `Monto` int(10) NOT NULL,
-  `Comentario` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
+  `Comentario` varchar(500) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
@@ -45,9 +47,10 @@ INSERT INTO `donacion` (`IdTransaccion`, `IdPersona`, `Monto`, `Comentario`) VAL
 --
 -- Estructura de tabla para la tabla `pago`
 --
+DROP TABLE IF EXISTS `pago`;
 
 CREATE TABLE `pago` (
-  `NumeroTarjeta` int(16) NOT NULL,
+  `NumeroTarjeta` char(19) NOT NULL,
   `IdPersona` int(10) NOT NULL,
   `NombreTarjeta` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
   `CVV` int(4) NOT NULL,
@@ -67,6 +70,8 @@ INSERT INTO `pago` (`NumeroTarjeta`, `IdPersona`, `NombreTarjeta`, `CVV`, `Vence
 --
 -- Estructura de tabla para la tabla `persona`
 --
+
+DROP TABLE IF EXISTS `persona`;
 
 CREATE TABLE `persona` (
   `IdPersona` int(10) NOT NULL,

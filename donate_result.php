@@ -9,12 +9,12 @@
 		include("conexion.php");
 			$identificador = rand(1000, 9999);
 			$nombre	= $_POST['nombre'];
-			$apPaterno = $_POST['apellido paterno'];
-			$apMaterno = $_POST['apellido materno'];
-			$email = $_POST['correo'];
+			$apPaterno = $_POST['apPaterno'];
+			$apMaterno = $_POST['apMaterno'];
+			$email = $_POST['email'];
 			
-			$numTarjeta = $_POST['numero de tarjeta'];
-			$nombreTarjeta = $_POST['nombre de tarjeta'];
+			$numTarjeta = $_POST['numTarjeta'];
+			$nombreTarjeta = $_POST['nombreTarjeta'];
 			$cvv = rand(1000, 9999);
 			$mes = rand(1, 12);
 			$anio = rand(23, 30);
@@ -28,21 +28,21 @@
 			$sqltransaccion = "INSERT INTO donacion VALUES ('$transaccion', '$identificador', '$monto', '$mensaje')";
 			
 			if(mysqli_query($conexion, $sqlpersona)){
-				echo "Datos registrados de usuario";
+				print("Datos registrados de usuario");
 			}else {
-				echo "Error: " . $sqlpersona . "<br>" . mysqli_error($conexion);
+				print("Error: " . $sqlpersona . "<br>" . mysqli_error($conexion));
 			}
 			
 			if(mysqli_query($conexion, $sqltarjeta)){
-				echo "Datos registrados de tarjeta";
+				print("Datos registrados de tarjeta");
 			}else {
-				echo "Error: " . $sqltarjeta . "<br>" . mysqli_error($conexion);
+				print("Error: " . $sqltarjeta . "<br>" . mysqli_error($conexion));
 			}
 			
 			if(mysqli_query($conexion, $sqltransaccion)){
-				echo "Datos registrados de donacion";
+				print("Datos registrados de donacion");
 			}else {
-				echo "Error: " . $sqltransaccion . "<br>" . mysqli_error($conexion);
+				print("Error: " . $sqltransaccion . "<br>" . mysqli_error($conexion));
 			}
 						
 			mysqli_close($conexion);
