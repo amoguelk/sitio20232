@@ -1,3 +1,4 @@
+/* General y pantallas grandes */
 html {
 	height: 100%;
 	font-size: 24px;
@@ -194,30 +195,6 @@ main {
 	font-size: 1em;
 }
 
-/*#submit-btn-container {
-	display: flex;
-	justify-content: flex-end;
-}
-*/
-/*#submit-btn {
-	font-size: 1em;
-    margin: 1em;
-    padding: 1em;
-    background-color: #596F62;
-    border: none;
-    color: white;
-}
-
-#submit-btn:hover {
-	background-color: #CACFD6;
-	color: black;
-}*/
-
-/*#submit-btn:disabled {
-	background-color: #CACFD6;
-	color: grey;
-}
-*/
 #result-display {
     background-color: #426B69;
     color: #CACFD6;
@@ -237,4 +214,56 @@ main {
     width: 100%;
     justify-content: center;
     font-size: larger;
+}
+
+.show-only-on-mobile {
+		height: 0vh;
+	}
+
+/* Pantallas medianas */
+@media screen and (max-width: 1200px) {
+	html {
+		font-size: 18px;
+	}
+
+/* Tablets */
+@media screen and (max-width: 900px) {
+	html {
+		font-size: 14px;
+	}
+
+	h3 {
+		font-size: 1.5em;
+	} 
+
+	h4 {
+		font-size: 1.25em;
+		margin: 0.5em 0 0.5em 0;
+	}
+
+	h5 {
+		font-size: 1em;
+		margin: 0.5em 0 0.5em 0;
+	}
+
+	p {
+		font-size: 1em;
+	}
+}
+
+
+/* Celular */
+@media screen and (max-width: 700px) {
+	html {
+		font-size: 10px;
+	}
+
+	.hide-on-mobile {
+		height: 0 !important;
+	}
+
+	.hide-on-mobile * {
+		height: 0 !important;
+		font-size: 0 !important;
+	}
 }
