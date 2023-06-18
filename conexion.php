@@ -9,7 +9,7 @@ function showError($errormsg) {
 $servidor 	= "localhost";
 $usuario	= "root";
 $contra		= "root1234";
-$BD			= "lomopedia";
+$BD			= "Eq11Lomopedia";
 
 //Creando la conexión
 try {

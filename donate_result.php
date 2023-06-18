@@ -13,7 +13,6 @@
 	<body>
 		<?php
 			include("conexion.php");
-			$identificador = rand(1000, 9999);
 			$nombre	= $_POST['nombre'];
 			$apPaterno = $_POST['apPaterno'];
 			$apMaterno = $_POST['apMaterno'];
@@ -25,25 +24,27 @@
 			$mes = rand(1, 12);
 			$anio = rand(23, 30);
 			
-			$transaccion = rand(1000, 9999);
 			$monto = $_POST['monto'];
 			$mensaje = $_POST['mensaje'];
 			
-			$sqlpersona = "INSERT INTO persona VALUES ('$identificador', '$nombre', '$apPaterno', '$apMaterno', '$email')";
-			$sqltarjeta = "INSERT INTO pago VALUES ('$numTarjeta', '$identificador', '$nombreTarjeta', '$cvv', '$mes','$anio')";
-			$sqltransaccion = "INSERT INTO donacion VALUES ('$transaccion', '$identificador', '$monto', '$mensaje')";
+			$sqlpersona = "INSERT INTO persona (`Nombre`, `ApellidoPaterno`, `ApellidoMaterno`, `CorreoElectronico`) VALUES ('$nombre', '$apPaterno', '$apMaterno', '$email')";
 			
 			try {
 				mysqli_query($conexion, $sqlpersona);
 			} catch (Exception $e) {
 				showError("Error: " . $sqlpersona . "<br>" . mysqli_error($conexion));
 			}
+			$identificador = mysqli_insert_id($conexion);
 
+			$sqltarjeta = "INSERT INTO pago VALUES ('$numTarjeta', '$identificador', '$nombreTarjeta', '$cvv', '$mes','$anio')";
 			try {
 				mysqli_query($conexion, $sqltarjeta);
 			} catch (Exception $e) {
 				showError("Error: " . $sqltarjeta . "<br>" . mysqli_error($conexion));
 			}
+
+
+			$sqltransaccion = "INSERT INTO donacion (`IdPersona`, `Monto`, `Comentario`) VALUES ('$identificador', '$monto', '$mensaje')";
 
 			try {
 				mysqli_query($conexion, $sqltransaccion);
